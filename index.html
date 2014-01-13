@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+    <link rel="stylesheet" href="css/b_flash.css">
+    <link rel="stylesheet" href="css/b_resize.css">
+    <link rel="stylesheet" href="css/b_page.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+<section data-markdown>
+	# Element Queries
+	### Responsive Web Design's Unicorn
+  [@bensmithett](https://twitter.com/bensmithett)
+</section>
+
+<section data-markdown>
+	## Who knows CSS?
+</section>
+
+<section data-markdown>
+	## Preprocessor (Sass or Less)?
+</section>
+
+<section data-markdown>
+	## BEM
+	## SMACSS
+	## OOCSS
+</section>
+
+<section data-markdown>
+	### We used to design & build pages
+</section>
+
+<section>
+	<div class="b-page">
+		<div class="b-page__heading">HOME</div>
+		<div class="b-page__content">
+			<div class="b-page__sidebar"></div>
+			<div class="b-page__main">
+				<div class="b-page__post"></div>
+				<div class="b-page__post"></div>
+			</div>
+		</div>
+  </div>
+</section>
+
+<section>
+  <div class="b-page">
+    <div class="b-page__heading">PRODUCTS</div>
+    <div class="b-page__content">
+      <div class="b-page__sidebar"></div>
+      <div class="b-page__main">
+        <div class="b-page__product"></div>
+        <div class="b-page__product"></div>
+        <div class="b-page__product"></div>
+        <div class="b-page__product"></div>
+        <div class="b-page__product"></div>
+        <div class="b-page__product"></div>
+        <div class="b-page__product"></div>
+        <div class="b-page__product"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-markdown>
+  ### We don't do pages any more
+</section>
+
+<section data-markdown>
+  ### We design & build **components**
+</section>
+
+<section>
+
+<h4>HTML</h4>
+<pre><code data-trim>
+<div class="my-component">
+  ...
+</div>
+</code></pre>
+
+<div class="fragment">
+<h4>CSS</h4>
+<pre><code data-trim>
+.my-component { color: blue; }
+</code></pre>
+</div>
+
+<div class="fragment">
+<h4>JavaScript</h4>
+<pre><code data-trim>
+$( ".my-component" ).doSomething();
+</code></pre>
+</div>
+
+</section>
+
+<section>
+  <img src="img/like.jpg">
+</section>
+
+<section>
+  <div class="b-page">
+    <div class="b-page__heading">STYLE GUIDE</div>
+    <div class="b-page__content">
+      <div class="b-page__container">
+        <div class="b-page__h2">Product Thumb</div>
+        <div class="b-page__product"></div>
+      </div>
+
+      <div class="b-page__container">
+        <div class="b-page__h2">Comment</div>
+        <div class="b-page__main--left">
+          <div class="b-page__post"></div>
+        </div>
+      </div>
+
+      <div class="b-page__container">
+        <div class="b-page__h2">Mini Shopping Cart</div>
+        <div class="b-page__product"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="b-page">
+    <div class="b-page__heading b-flash-1">HOME</div>
+    <div class="b-page__content">
+      <div class="b-page__sidebar b-flash-2"></div>
+      <div class="b-page__main">
+        <div class="b-page__post b-flash-3"></div>
+        <div class="b-page__post b-flash-3"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-markdown>
+  ## Responsive Components
+</section>
+
+<section>
+  <h2>Page : Device</h2>
+  <br><br>
+  <h2>Component : Container</h2>
+</section>
+
+<section>
+  <div class="b-page">
+    <div class="b-page__content">
+      <div class="b-page__sidebar--mini" style="background: green"></div>
+      <div class="b-page__main">
+        <div class="b-page__post fragment" style="background: yellow"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="b-page">
+    <div style="position: relative;">
+      <div class="b-page__iframe b-resize--width">
+        <div class="b-page__post b-resize--color"></div>
+      <div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3 style="line-height: 150%">How do we make a component<br>
+  <span style="font-size: 150%">respond</span><br>
+  to changes in its own size?</h3>
+</section>
+
+<section>
+  <h3>Window: Media Queries</h3>
+  <h3 class="fragment">Element: ???</h3>
+</section>
+
+<section><h1>Element Queries!</h1></section>
+
+<section data-markdown>
+  #### April 2013
+  ### [Media Queries are a Hack](http://ianstormtaylor.com/media-queries-are-a-hack/)
+  ####by Ian Storm Taylor
+</section>
+
+<section>
+<h3>Media Query</h3>
+<pre><code data-trim>
+@media ( min-width: 1024px ) { 
+  .component { 
+    color: yellow;
+  }
+}
+</code></pre>
+
+<div class="fragment">
+<h3>Element Query</h3>
+<pre><code data-trim>
+.component:min-width( 600px ) { 
+  color: yellow;
+}
+</code></pre>
+</div>
+
+</section>
+
+<section data-markdown>
+  # :(
+  ### Element Queries don't exist
+</section>
+
+<section>
+  <h3>why?</h3>
+  <h2 class="fragment">circular dependencies</h2>
+</section>
+
+<section>
+<pre><code data-trim>
+.container {
+  float: left;
+}
+</code></pre>
+
+<pre><code data-trim>
+.child {
+  width: 500px;
+}
+</code></pre>
+
+<pre class="fragment"><code data-trim>
+.container:min-width (450px) > .child {
+  width: 400px;
+}
+</code></pre>
+</section>
+
+<section data-markdown>
+  Limitations & challenges explained in
+  ### [Element Queries](http://www.xanthir.com/b4PR0)
+  ####by Tab Atkins (Chrome dev)
+</section>
+
+<section>
+  <h3>How to build Responsive Components?</h3>
+  <h2><del>Element Queries</del></h2>
+  <h2 class="fragment">iframes!</h2>
+</section>
+
+<section>
+  <img src="img/like.jpg">
+  <br>
+  <span>and Twitter, Google+, Disqus, YouTube, etc etc</span>
+</section>
+
+<section>
+  <ul>
+    <li>Establish a new viewport</li>
+    <li class="fragment">Regular Media Queries work</li>
+    <li class="fragment">Size of <code>iframe</code> element isn't affected by size of child elements</li>
+    <li class="fragment">No circularity!</li>
+  </ul>
+</section>
+
+<section>
+  <div class="b-page">
+    <div style="position: relative;">
+      <div class="b-page__iframe b-resize--width">
+        <div class="b-page__post b-resize--color"></div>
+      <div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Downsides</h2>
+  <ul>
+    <li>Performance</li>
+    <li class="fragment">Don't inherit CSS from parent document</li>
+    <li class="fragment">Makes JavaScript really annoying</li>
+  </ul>
+</section>
+
+<section>
+  <h3>How to build Responsive Components?</h3>
+  <h2><del>Element Queries</del></h2>
+  <h2><del>iframes</del></h2>
+  <h2 class="fragment">Fake Element Queries with JS!</h2>
+</section>
+
+<section>
+  <h2>Fake Element Queries with JS</h2>
+  <ul>
+    <li>Watch element</li>
+    <li class="fragment">Detect when it changes size</li>
+    <li class="fragment">Update a class</li>
+  </ul>
+</section>
+
+<section>
+  <code>class="my-component<span class="b-resize--content"> gt-600px</span>"</code>
+  <br><br>
+  <div class="b-page">
+    <div style="position: relative;">
+      <div class="b-page__iframe b-resize--width">
+        <div class="b-page__post b-resize--color"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-markdown>
+```
+.my-component {
+  color: green
+}
+
+/* .component:min-width( 600px )  */
+.my-component.gt-600px {
+  color: yellow
+}
+```
+</section>
+
+<section>
+  <h2>Downsides</h2>
+  <ul>
+    <li>Detecting when an element changes size is surprisingly difficult</li>
+    <li class="fragment">Solutions are hacky: polling, invisible sensor elements, cross browser drama</li>
+    <li class="fragment">Verdict: maaaybe. Wouldn't do it in production tomorrow.</li>
+    <li class="fragment"><a href="http://fremycompany.com/BG/2013/Element-Media-Queries-min-width-883/"><code>:min-width</code> prollyfill</a></li>
+    <li class="fragment"><a href="http://www.backalleycoder.com/2013/03/18/cross-browser-event-based-element-resize-detection/">Cross-Browser, Event-based, Element Resize Detection</a></li>
+  </ul>
+</section>
+
+<section>
+  <h3>How to build Responsive Components?</h3>
+  <h2><del>Element Queries</del></h2>
+  <h2><del>iframes</del></h2>
+  <h2><del>Fake Element Queries with JS!</del></h2>
+  <br>
+  <div class="fragment">
+    <h4>Ben's Kinda-Boring Recommended Solution&trade;</h4>
+    <h2>Use BEM classes</h2>
+  </div>
+</section>
+
+<section>
+  We don't <em>really</em> render our components in infinite contexts...
+  <br><br>
+  <div class="b-page">
+    <div style="position: relative;">
+      <div class="b-page__iframe b-resize--width">
+        <div class="b-page__post b-resize--color"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  ...most of the time they'll only have 2 or 3 possible parent containers
+  <br><br>
+  <div class="b-page">
+    <div class="b-page__content">
+      <div class="b-page__sidebar--mini" style="background: green"></div>
+      <div class="b-page__main">
+        <div class="b-page__post" style="background: yellow"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+...and you probably already know the breakpoints where you want the CSS to change
+<br><br>
+<pre><code data-trim>
+.my-component,
+.my-component--does-respond {
+  color: green
+}
+
+@media ( min-width: 1024px ) {
+  .component--does-respond {
+    color: yellow
+  }
+}
+</code></pre>
+<br>
+<div class="fragment">It's cheating, but it does the job for now.</div>
+</section>
+
+<section>
+  <h2>Responsive components:</h2>
+  <p class="fragment">Components that work <del>everywhere</del> where you need them to.</p>
+</section>
+
+<section>
+  <p>But what does the future hold?</p>
+</section>
+
+<section>
+  <h2>Web Components</h2>
+  <ul>
+    <li>Isolated, sandboxed chunks of HTML, CSS & JavaScript</li>
+    <li class="fragment">Only in Chrome so far</li>
+    <li class="fragment"><a href="http://www.polymer-project.org/">Polymer</a> polyfill</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Element Queries!</h2>
+  <code>&lt;viewport&gt;</code> solves circularity
+
+  <br><br>
+  <div class="fragment">
+  <a href="http://lists.w3.org/Archives/Public/www-style/2012Dec/0295.html">Lots</a>
+  of
+  <a href="http://lists.w3.org/Archives/Public/www-style/2013Mar/0368.html">discussion</a>
+  on W3C mailing list
+  </div>
+</section>
+
+<section data-markdown>
+  ## In summary...
+
+  - Design & build libraries of responsive components!
+  - Use [BEM](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/) class names
+  - We might get Element Queries one day!
+</section>
+
+<section data-markdown>
+  # Thanks!
+
+  I'm [@bensmithett](https://twitter.com/bensmithett) on the internet
+</section>
+
+
+
+
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
