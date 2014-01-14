@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Element Queries: Responsive Web Design's Unicorn</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="Slides for a talk I gave at Be Responsive Melbourne in January 2014.">
+		<meta name="author" content="Ben Smithett">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -37,7 +37,6 @@
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
       ga('create', 'UA-17358351-5', 'bensmithett.github.io');
       ga('send', 'pageview');
     </script>
@@ -233,7 +232,7 @@ $( ".my-component" ).doSomething();
 <h3>Media Query</h3>
 <pre><code data-trim>
 @media ( min-width: 1024px ) { 
-  .component { 
+  .my-component { 
     color: yellow;
   }
 }
@@ -242,7 +241,7 @@ $( ".my-component" ).doSomething();
 <div class="fragment">
 <h3>Element Query</h3>
 <pre><code data-trim>
-.component:min-width( 600px ) { 
+.my-component:min-width( 600px ) { 
   color: yellow;
 }
 </code></pre>
@@ -352,6 +351,8 @@ $( ".my-component" ).doSomething();
       </div>
     </div>
   </div>
+  <br><br>
+  <small>(Note for anyone browsing these slides: refresh this page if you don't see a flashing <code>gt-600px</code> class. Something's broken &amp; I haven't had a chance to fix it yet.)</small>
 </section>
 
 <section data-markdown>
@@ -360,7 +361,7 @@ $( ".my-component" ).doSomething();
   color: green
 }
 
-/* .component:min-width( 600px )  */
+/* .my-component:min-width( 600px )  */
 .my-component.gt-600px {
   color: yellow
 }
@@ -425,7 +426,7 @@ $( ".my-component" ).doSomething();
 }
 
 @media ( min-width: 1024px ) {
-  .component--does-respond {
+  .my-component--does-respond {
     color: yellow
   }
 }

@@ -39,8 +39,8 @@
 
 # Responsive components
 ---------------------
-
-- Page : Device == Component : Container
+- I think these components should be responsive.
+  - Page : Device == Component : Container
   - Where our pages should work no matter what device you view them in
   - Our components should work no matter what container you put them in
   - Those little isolated chunks of web page should be flexible
@@ -48,7 +48,7 @@
   - They should just work in the available space
 
 - Example component
-  - In sidebar
+  - In sidebar it's green
   - In main column
     - when there's more space available it should adjust itself to fit that space
   
@@ -102,6 +102,7 @@
   - No circular dependencies
 
 - Animation
+  - Put an iframe-based component in any sized container & it just works
 
 - Obvious downsides
   - Big performance impact
@@ -144,9 +145,9 @@
 - You probably already know the Media Query breakpoints
   - Because we know where our components will live (even though we're not supposed to, components meant to be independent & isolated)
     - We can kinda cheat
-    - Just use classes!
+    - Just use classes & normal Media Queries!
   - Just normal Responsive Web Design
-  - But with BEM & Sass it really starts to look like a proper isolated component
+  - But with BEM syntax & goodies from Sass it really starts to look like a proper isolated component
   - Not as nice as a pure solution
 
 - What is a Responsive Component
